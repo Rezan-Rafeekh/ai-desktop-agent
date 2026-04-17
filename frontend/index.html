@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Desktop Agent | Editorial Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Sidebar Toggle & Overlay -->
+    <button id="sidebarToggle" class="sidebar-toggle" title="Prompt History">☰</button>
+    <div class="sidebar" id="historySidebar">
+        <h3 class="sidebar-title">Prompt History</h3>
+        <div id="historyList">
+            <!-- Items injected here by main.js -->
+        </div>
+    </div>
+
+    <div class="page-container">
+        <!-- Hero Section -->
+        <header class="hero-section section">
+            <h1 class="hero-title">AI Desktop Agent</h1>
+            <p class="hero-subtitle">Automated intelligence for document synthesis and desktop operations.</p>
+            
+            <div class="task-input-wrapper">
+                <textarea id="taskInput" placeholder="Describe your objective..." spellcheck="false">Generate a professional task report</textarea>
+                <button id="runBtn" class="primary-btn">Execute Plan</button>
+            </div>
+            
+            <div class="config-bar">
+                <label class="editorial-checkbox">
+                    <input type="checkbox" id="doExcel" checked>
+                    <span class="custom-box"></span>
+                    Excel Report
+                </label>
+                <label class="editorial-checkbox">
+                    <input type="checkbox" id="doWord" checked>
+                    <span class="custom-box"></span>
+                    Word Document
+                </label>
+                <label class="editorial-checkbox">
+                    <input type="checkbox" id="doPdf" checked>
+                    <span class="custom-box"></span>
+                    PDF Analysis
+                </label>
+                <label class="editorial-checkbox">
+                    <input type="checkbox" id="useLlm">
+                    <span class="custom-box"></span>
+                    Autonomous Mode
+                </label>
+            </div>
+        </header>
+
+            <!-- Extracted Data Preview Panel -->
+            <div id="extraction-panel" class="status-card" style="display: none; margin-bottom: 20px;">
+                <div class="card-header">
+                    <span class="icon">🔍</span>
+                    <h3>Extracted Data Preview</h3>
+                </div>
+                <div class="card-body">
+                    <pre id="extraction-data-preview" style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; font-family: 'Consolas', monospace; font-size: 0.85rem; max-height: 300px; overflow-y: auto;"></pre>
+                </div>
+            </div>
+
+            <!-- Execution Stats & Gallery -->
+        <section class="flow-section section" id="flowSection" style="display: none;">
+            <h2 class="section-title">Execution Flow</h2>
+            <div id="statusIndicator" class="sub-indicator">Agent is preparing...</div>
+            <div class="flow-grid" id="flowGrid">
+                <!-- Cards injected here -->
+            </div>
+        </section>
+
+        <!-- Screenshot Gallery -->
+        <section class="gallery-section section" id="gallerySection" style="display: none;">
+            <h2 class="section-title">Visual Capture</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Images injected here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
